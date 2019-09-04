@@ -1,0 +1,57 @@
+CREATE DATABASE  DB_EVENTOS
+	ON
+	(
+	NAME = DB_EVENTOS_DAT,
+	FILENAME= N'C:\Users\ta0509\Documents\Sinqia_AspNet\Data\DbEventos.mdf', 
+	SIZE = 5000KB,
+	MAXSIZE=UNLIMITED,
+	FILEGROWTH=1000KB
+	)
+	
+	LOG ON
+	 (
+	 NAME = DB_EVENTOS_LOG,
+	FILENAME= N'C:\Users\ta0509\Documents\Sinqia_AspNet\Data\DbEventos_log.ldf', 
+	SIZE = 2000KB,
+	MAXSIZE=UNLIMITED,
+	FILEGROWTH=1000KB
+	);
+
+
+USE DB_VENDAS;
+
+CREATE TABLE TBClientes(
+Rg varchar(14) not null,
+Nome varchar(60) not null,
+Telefone varchar(20) not null,
+Email varchar(60) not null, 
+PRIMARY KEY(Rg)
+)
+CREATE TABLE TBPedidos(
+Id int not null,
+DocCliente varchar(14) not null,
+Data datetime not null,
+NumeroPedido varchar(20) not null, 
+PRIMARY KEY(Id)
+)
+CREATE TABLE TBItens(
+Id int not null,
+IdPedido int not null,
+IdProduto int not null,
+Quantidade float not null, 
+PRIMARY KEY(Id)
+)
+CREATE TABLE TBCategorias(
+Id int not null,
+Descricao varchar(20) not null,
+PRIMARY KEY(Id)
+)
+CREATE TABLE TBProdutos(
+Id varchar(14) not null,
+IdCategoria int not null,
+Descricao varchar(50) not null,
+Unidade varchar(10) not null, 
+Foto varbinary(MAX) not null, 
+MimeType varchar(20) not null, 
+PRIMARY KEY(Id)
+)

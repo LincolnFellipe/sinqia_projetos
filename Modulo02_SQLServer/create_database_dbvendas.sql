@@ -1,0 +1,20 @@
+CREATE DATABASE DB_VENDAS ON
+(
+NAME = DB_VENDAS_DAT,
+FILENAME = N'C:\Users\ta0510\Documents\Sinqia_AspNet\Data\DBVendas.mdf',
+SIZE = 5000KB,
+MAXSIZE=UNLIMITED,
+FILEGROWTH = 1000KB 
+)
+
+LOG ON 
+(
+NAME = DB_VENDAS_LOG,
+FILENAME = N'C:\Users\ta0510\Documents\Sinqia_AspNet\Data\DBVendas_log.ldf',
+SIZE = 5000KB,
+MAXSIZE=UNLIMITED,
+FILEGROWTH = 1000KB
+);
+GO
+
+
